@@ -17,4 +17,26 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
+  get '/bookings' do 
+    bookings = Booking.all
+    bookings.to_json
+  end
+
+  post '/bookings/' do 
+    booking = Booking.create(body: params[:body], user_id: params[:user_id])
+    booking.to_json
+  end
+
+  patch '/bookings/:id' do
+    booking = Booking.all.find(params[:id])
+    booking.update(body: body)
+    booking.to_json
+  end
+
+  delete '/bookings/:id' do
+    booking = Booking.all.find(params[:id])
+    booking.delete
+    booking.to_json
+  end
+
 end
