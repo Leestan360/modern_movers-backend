@@ -1,4 +1,4 @@
-puts "Planting seed"
+puts "Planting seed!"
 # User instances
 stanley = User.create(first_name: "Stanley", last_name: "Mayore", email: "stan@gmail.com", password: "12345678", password_confirmation: "12345678")
 
