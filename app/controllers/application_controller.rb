@@ -45,6 +45,7 @@ class ApplicationController < Sinatra::Base
     booking.to_json
   end
 
+  # Delete a booking
   delete '/bookings/:id' do
     booking = Booking.all.find(params[:id])
     booking.delete
