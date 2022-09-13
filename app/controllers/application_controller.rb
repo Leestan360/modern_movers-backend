@@ -32,11 +32,13 @@ class ApplicationController < Sinatra::Base
     bookings.to_json
   end
 
+  # Create a new booking
   post '/bookings' do 
     booking = Booking.create(body: params[:body], user_id: params[:user_id])
     booking.to_json
   end
 
+  # Update a booking
   patch '/bookings/:id' do
     booking = Booking.all.find(params[:id])
     booking.update(body: body)
