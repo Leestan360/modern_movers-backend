@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     bookings.to_json
   end
 
-  post '/bookings/' do 
+  post '/bookings' do 
     booking = Booking.create(body: params[:body], user_id: params[:user_id])
     booking.to_json
   end
