@@ -19,6 +19,7 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
+  # Delete a user
   delete '/users/:id' do
     user = User.all.find(params[:id])
     user.delete
