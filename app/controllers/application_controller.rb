@@ -26,6 +26,7 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
+  # Get all bookings
   get '/bookings' do 
     bookings = Booking.all
     bookings.to_json
